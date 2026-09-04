@@ -1,10 +1,16 @@
 # scroll-craft
 
-**A Claude Code skill that builds premium, scroll-driven websites, and holds them to a real design standard.**
+**An agent skill for building premium, scroll-driven websites, with a real design standard.**
+
+Use it with Codex, Claude Code, or another coding agent that can read instructions,
+edit files, run commands, and inspect a browser. The skill contains the design
+workflow, references, engine, and verification tools. It also ships as a Claude
+Code plugin for convenient installation.
 
 Most AI website output fails in one of two directions. It is either well behaved and forgettable, or it is a flashy scroll animation with 2.1:1 body text, a headline that wraps to six lines on a phone, and the same six sections every other AI page has. scroll-craft is built to fail neither way: it treats **interaction** and **craft** as one job rather than two.
 
 [![MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
+[![Agent skill](https://img.shields.io/badge/agent-skill-3b82f6.svg)](plugins/nateherk-design/skills/scroll-craft/SKILL.md)
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-d97757.svg)](https://code.claude.com/docs/en/plugins)
 
 ---
@@ -83,6 +89,31 @@ Then it writes a contact sheet, because a machine can prove a page works and can
 
 ## Install
 
+### Codex and other coding agents
+
+Clone or download this repository. The complete skill lives in
+[`plugins/nateherk-design/skills/scroll-craft/`](plugins/nateherk-design/skills/scroll-craft/).
+Keep that folder intact, including its references, scripts, templates, and engine.
+
+- **Codex:** copy the complete `scroll-craft` folder into your project's
+  `.agents/skills/` directory, then ask Codex to use the Scrollcraft skill.
+- **Other agents with skill support:** place the folder in the agent's documented
+  skill directory.
+- **Any coding agent with file access:** leave the repository in your workspace
+  and ask it to read and follow the skill directly:
+
+```text
+Read plugins/nateherk-design/skills/scroll-craft/SKILL.md and use it to build
+my website. Follow the referenced design and verification workflow.
+```
+
+Adjust the path if the repository is in a subfolder. Agents use their own tools
+for file access, shell commands, browser inspection, and user questions. The
+design workflow is shared; tool names and automatic skill discovery can differ.
+The ten-site rebuild documented here was built with Codex.
+
+### Claude Code plugin
+
 ```bash
 /plugin marketplace add nateherkai/scroll-craft
 ```
@@ -106,10 +137,14 @@ claude --plugin-dir ./plugins/nateherk-design
 
 ## First run
 
+From this repository's root, run:
+
 ```bash
-node scripts/doctor.mjs              # preflight: says exactly what is missing
-node scripts/workspace.mjs --ensure  # creates your workspace and an empty registry
+node plugins/nateherk-design/skills/scroll-craft/scripts/doctor.mjs
+node plugins/nateherk-design/skills/scroll-craft/scripts/workspace.mjs --ensure
 ```
+
+If you installed the skill elsewhere, use that folder's `scripts/` path instead.
 
 Run `doctor` before anything else. The three most common setup faults all surface later as misleading errors otherwise: a stripped ffmpeg reports a missing filter as a syntax error in *your* command, a missing WebP muxer reports as a bad filename, and `playwright-core` resolves from the wrong directory.
 
@@ -139,8 +174,10 @@ Builds land in `<workspace>/builds/<name>/`; your registry is `<workspace>/FINGE
 ```
 plugins/nateherk-design/
 └── skills/scroll-craft/
-    ├── SKILL.md            the procedure: interview, grammar, score, build, verify
+    ├── SKILL.md            the procedure: brief, grammar, score, build, verify
     ├── references/
+    │   ├── approved-collection.md  the ten-site workflow and worked examples
+    │   ├── hero-depth.md   independent planes, contact anchors, mobile composition
     │   ├── uniqueness.md   eight page grammars, the signature move, the fingerprint gate
     │   ├── feel.md         the feeling curve, the engineered peak, the feel check
     │   ├── devices.md      nine scroll devices and the cue contract
