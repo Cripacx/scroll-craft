@@ -9,6 +9,24 @@ Most AI website output fails in one of two directions. It is either well behaved
 
 ---
 
+## New in 0.3.0: the approved ten-site standard
+
+The skill now includes the process behind ten approved immersive websites:
+AI Automation Society, PERKFORM, Glaido, Herkules Advisory, Serein, FORME,
+Pelagic, NOEMA, OFFGRID, and Afterhours.
+
+- Plan independent depth planes, contact anchors, and opening/midpoint/exit states.
+- Use authentic brand assets and verified product details before generating imagery.
+- Choose photographic compositing or real 3D rendering to suit the subject.
+- Give each site its own navigation, information order, useful controls, and ending.
+- Art-direct phones separately and verify actual scroll frames, fallbacks, and packages.
+- Honor explicit creative delegation without forcing a redundant interview.
+
+Read the [worked examples and production workflow](plugins/nateherk-design/skills/scroll-craft/references/approved-collection.md)
+and the [hero-depth guide](plugins/nateherk-design/skills/scroll-craft/references/hero-depth.md).
+These examples describe design behavior; client assets and private form data are
+not bundled. The existing engine and video compatibility fixes are preserved.
+
 ## Three builds, three completely different pages
 
 Same skill, same engine, no shared skeleton. The differences below are not themes: they are different page grammars, different navigation models, different endings.
