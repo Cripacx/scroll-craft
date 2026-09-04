@@ -21,6 +21,13 @@ The skill now includes the process behind ten approved immersive websites:
 AI Automation Society, PERKFORM, Glaido, Herkules Advisory, Serein, FORME,
 Pelagic, NOEMA, OFFGRID, and Afterhours.
 
+### See the worked examples in motion
+
+A 50-second walkthrough of several approved sites, showing their layered heroes,
+pointer response, and scroll transitions.
+
+https://github.com/user-attachments/assets/d193073b-5af9-45de-93ae-95bf7c6934d5
+
 - Plan independent depth planes, contact anchors, and opening/midpoint/exit states.
 - Use authentic brand assets and verified product details before generating imagery.
 - Choose photographic compositing or real 3D rendering to suit the subject.
